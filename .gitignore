@@ -1,0 +1,5 @@
+# pycharm stuff
+/.idea/
+
+#django stuff
+/db.sqlite3
