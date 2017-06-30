@@ -1,4 +1,5 @@
-from .world import IntlOrg, FootballAssociation
+from .world import IntlOrgs, FootballAssociations
 from .competitions import Leagues, Tournaments
-from .agents import Clubs, Players, PlayerStats, Results
-from .environment import Year, Region, Country
+from .agents import Clubs, Players
+from .environment import Years, Regions, Countries, Cities
+from .stats import PlayerStats, ManagerStats, Results
