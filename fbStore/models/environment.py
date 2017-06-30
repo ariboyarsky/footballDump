@@ -1,7 +1,6 @@
 # environments.py will hold useful multipurpose
 # environmental variables in the football world
 
-# todo: create game and date models
 
 from django.db import models
 
@@ -24,5 +23,6 @@ class Countries:
 
 class Cities:
     full_name = models.CharField(max_length=150, help_text="Name of city")
-    country = models.ForeignKey(Countries, elated_name="city", null=True, on_delete=models.SET_NULL,
+    population = models.IntegerField()
+    country = models.ForeignKey("Countries", related_name="city", null=True, on_delete=models.SET_NULL,
                                 help_text="The country a city is in")

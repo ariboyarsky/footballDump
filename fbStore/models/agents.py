@@ -16,7 +16,7 @@ class Clubs:
 class Players:
     first_name = models.CharField(max_length=150, db_index=True, default="", help_text="Player first name.")
     last_name = models.CharField(max_length=150, db_index=True, default="", help_text="Player last name.")
-    club = models.ForeignKey(Clubs, related_name="player", null=True, on_delete=models.SET_NULL,
+    club = models.ForeignKey("Clubs", related_name="player", null=True, on_delete=models.SET_NULL,
                                          help_text="The club a player plays")
     country = models.ForeignKey("fbStore.environment.Countries", related_name="player", null=True, on_delete=models.SET_NULL,
                              help_text="The country a player is from (home)")
@@ -30,7 +30,7 @@ class Managers:
     country = models.ForeignKey("fbStore.environment.Countries", related_name="manager", null=True, on_delete=models.SET_NULL,
                                 help_text="The country a manager is from (home)")
     # could be null if intl manager
-    club = models.ForeignKey(Clubs, related_name="player", null=True, on_delete=models.SET_NULL,
+    club = models.ForeignKey("Clubs", related_name="player", null=True, on_delete=models.SET_NULL,
                              help_text="The club a player plays")
     # could be null if manger does not manage intl team
     international_team = models.ForeignKey("fbStore.environment.Countries", related_name="player", null=True, on_delete=models.SET_NULL,
